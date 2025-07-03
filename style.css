@@ -1,0 +1,255 @@
+/* Resetting margins, paddings, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: hidden;
+}
+
+/* Ensuring html and body take up the full height of the viewport */
+html, body 
+{
+ margin: 0;
+padding: 0;
+font-family: 'Rubik', sans-serif;
+height: 100%;
+background-color:black;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat
+}
+.heading {
+    text-align: center;
+    color:white;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    padding-top: 100px; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    position: relative;
+    font-size:35px;
+}
+.heading h3
+{
+    padding-top:35px;
+    font-size:25px;
+    background: linear-gradient(to right, #2F80ED, #2F80ED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.heading h1
+{
+    background: linear-gradient(to right,#56CCF2, #2F80ED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Russo One", sans-serif;
+    font-weight: 100;
+}
+
+/* Styling the arrows */
+.arrow {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    animation: bounce 2s infinite;
+    bottom:20px;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Positioning the down arrow */
+.down-arrow {
+    bottom: 20px;
+}
+
+/* Positioning the up arrow */
+.up-arrow {
+    top: 20px;
+    bottom:auto;
+    color:white;
+}
+.arrow:hover{
+    color:skyblue;
+}
+
+/* Adding bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Styling the target section */
+.content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+    background-color: black;
+    color: white; /* Ensure text is visible */
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+    overflow: hidden; /* Hide overflow if needed */
+}
+#image-track {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%); 
+    user-select: none; /* -- Prevent image highlighting -- */
+  }
+  
+  #image-track > .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+  }
+  .heading img{
+    bottom:20px;
+    cursor:pointer;
+    width:250px;
+    height:auto;
+  }
+.heading a{
+    text-decoration: none;
+    color: white;
+    margin: 0 10px; /* Space between links */
+    padding: 5px;
+    font-size: 18px;
+    /* Optional: Add some styling for hover effect */
+    transition: color 0.3s ease;
+    margin-top:20px;
+}
+.heading a:hover{
+    color: skyblue; /* Change co color: #ddd; /* Change color on hover */
+}   
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+}
+
+.carousel-image {
+    width: 250px;
+    height: 150px;
+    margin: 0 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Keyframe animation to scroll left continuously */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.places 
+{
+margin: 20px;
+display: flex;
+justify-content: center;
+gap: 150px; 
+}
+    
+ @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 10px 3px blue;
+    }
+    50% {
+      box-shadow: 0 0 30px 10px rgb(26, 7, 228);
+    }
+  }
+  
+.places .button-link 
+{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    width:240px;
+    height:75px;
+    font-size:35px;
+    border-radius:15px;
+    text-decoration: none;
+  } 
+ .places .button-link:hover 
+ {
+    border-color: white;
+    animation: glowPulse 1.5s infinite alternate;
+    color:red;
+  }  
+  .places .second 
+  {
+    width: 300px; /* just for the second one */
+  }  
+  .places .second:hover
+  {
+    border-color: white;
+    animation: glowPulse2 1.5s infinite alternate;
+    color:white;
+  }
+  .places .second
+  {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    height:75px;
+    font-size:35px;
+    border-radius:15px;
+    text-decoration: none;
+  }
+  @keyframes glowPulse2 {
+    0%, 100% {
+      box-shadow: 0 0 10px 3px rgba(223, 10, 10, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 30px 10px rgb(255, 0, 0);
+    }
+  }
+  @media (max-width: 600px) {
+    .places {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px; /* smaller vertical space between buttons */
+    }
+  
+    .places .button-link,
+    .places .second {
+      width: 100%;      /* take most of the screen width */
+      max-width: 400px;
+      margin: 0 auto;   /* center horizontally */
+      text-align: center;
+    }
+  }
+  
+  
